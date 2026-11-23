@@ -35,7 +35,7 @@ RAW.mkdir(parents=True, exist_ok=True)
 SITE.mkdir(parents=True, exist_ok=True)
 
 FETCH_START = "2022-01-01"          # warmup for trailing features
-END = "2026-11-14"                  # last day in snapshot window
+END = date.today().isoformat()       # last day in snapshot window (rolls forward daily)
 ORIGIN_START = "2023-03-01"         # first forecast origin
 RETRIEVAL_DATE = date.today().isoformat()
 UA = {"User-Agent": "hydrotwin-energy-pipeline/1.0 (research; contact via repo)"}
