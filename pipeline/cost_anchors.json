@@ -1,0 +1,498 @@
+{
+ "source_workbook": "Power_Plant_Costs_per_MW_Renewables_SMR_2.xlsx",
+ "eia_sheet_title": "Overnight capital cost of new power plants, United States (2023 $)",
+ "eia_sheet_source": "Source: Sargent & Lundy for U.S. EIA, \"Capital Cost and Performance Characteristics for Utility-Scale Electric Power Generating Technologies\", Jan. 2024 (basis of AEO2025), Table 1-2. Blue = values from the source; black = formulas.",
+ "lazard_sheet_title": "Capital cost and unsubsidized LCOE ranges, United States",
+ "lazard_sheet_source": "Source: Lazard, \"Levelized Cost of Energy+ (LCOE+)\", July 2026 (LCOE v19.0), key assumptions appendix. Unsubsidized, i.e. without tax credits.",
+ "gas_marginal_cost": {
+  "formula": "implied marginal cost $/MWh = heat_rate(Btu/kWh)/1000 * Henry Hub gas ($/MMBtu) + variable O&M ($/MWh)",
+  "techs": [
+   {
+    "key": "cc",
+    "label": "Gas combined cycle",
+    "heat_rate_btu_kwh": 6246.0,
+    "vom_usd_mwh": 3.37,
+    "configs": [
+     "Combined cycle 2x2x1, H-class",
+     "Combined cycle 1x1x1, single shaft"
+    ]
+   },
+   {
+    "key": "peak",
+    "label": "Gas peaking (simple-cycle CT)",
+    "heat_rate_btu_kwh": 9294.5,
+    "vom_usd_mwh": 3.47,
+    "configs": [
+     "Combustion turbine, simple cycle, H-class",
+     "Aeroderivative CT, simple cycle"
+    ]
+   }
+  ],
+  "note": "Heat rate and variable O&M are the mean of the EIA sheet's configurations for each class. Coal, nuclear and biomass rows in the same sheet also carry heat rates, but their fuel is not Henry Hub gas, so no gas-implied marginal cost is derived for them."
+ },
+ "lcoe_bands": [
+  {
+   "technology": "Solar PV, utility",
+   "lcoe_lo_usd_mwh": 40.0,
+   "lcoe_hi_usd_mwh": 98.0,
+   "capacity_factor": "20\u201330 %"
+  },
+  {
+   "technology": "Wind, onshore",
+   "lcoe_lo_usd_mwh": 37.0,
+   "lcoe_hi_usd_mwh": 99.0,
+   "capacity_factor": "30\u201355 %"
+  },
+  {
+   "technology": "Geothermal",
+   "lcoe_lo_usd_mwh": 67.0,
+   "lcoe_hi_usd_mwh": 111.0,
+   "capacity_factor": "80\u201390 %"
+  },
+  {
+   "technology": "Gas combined cycle",
+   "lcoe_lo_usd_mwh": 51.0,
+   "lcoe_hi_usd_mwh": 129.0,
+   "capacity_factor": "30\u201390 %"
+  },
+  {
+   "technology": "Gas peaking",
+   "lcoe_lo_usd_mwh": 144.0,
+   "lcoe_hi_usd_mwh": 276.0,
+   "capacity_factor": "10\u201315 %"
+  },
+  {
+   "technology": "Nuclear, large (U.S.)",
+   "lcoe_lo_usd_mwh": 175.0,
+   "lcoe_hi_usd_mwh": 255.0,
+   "capacity_factor": "89\u201394 %"
+  }
+ ],
+ "eia_overnight": [
+  {
+   "category": "Renewable",
+   "technology": "Geothermal, binary cycle",
+   "configuration": "Binary cycle",
+   "capacity_mw": 50.0,
+   "overnight_usd_kw": 3963.0,
+   "fom_usd_kw_yr": 150.6,
+   "vom_usd_mwh": 0.0,
+   "heat_rate_btu_kwh": null
+  },
+  {
+   "category": "Renewable",
+   "technology": "Solar PV, single-axis tracking",
+   "configuration": "150 MWac",
+   "capacity_mw": 150.0,
+   "overnight_usd_kw": 1502.0,
+   "fom_usd_kw_yr": 20.23,
+   "vom_usd_mwh": 0.0,
+   "heat_rate_btu_kwh": null
+  },
+  {
+   "category": "Renewable",
+   "technology": "Solar PV + AC-coupled battery",
+   "configuration": "150 MWac + 50 MW/200 MWh",
+   "capacity_mw": 150.0,
+   "overnight_usd_kw": 2175.0,
+   "fom_usd_kw_yr": 38.39,
+   "vom_usd_mwh": 0.0,
+   "heat_rate_btu_kwh": null
+  },
+  {
+   "category": "Renewable",
+   "technology": "Solar PV + DC-coupled battery",
+   "configuration": "150 MWac + 50 MW/200 MWh",
+   "capacity_mw": 150.0,
+   "overnight_usd_kw": 2561.0,
+   "fom_usd_kw_yr": 39.24,
+   "vom_usd_mwh": 0.0,
+   "heat_rate_btu_kwh": null
+  },
+  {
+   "category": "Renewable",
+   "technology": "Onshore wind, large plant (Great Plains)",
+   "configuration": "200 MW, 2.8 MW turbines",
+   "capacity_mw": 200.0,
+   "overnight_usd_kw": 1489.0,
+   "fom_usd_kw_yr": 33.06,
+   "vom_usd_mwh": 0.0,
+   "heat_rate_btu_kwh": null
+  },
+  {
+   "category": "Renewable",
+   "technology": "Onshore wind, repowering",
+   "configuration": "150 MW, 1.5\u20131.62 MW turbines",
+   "capacity_mw": 150.0,
+   "overnight_usd_kw": 1386.0,
+   "fom_usd_kw_yr": 38.55,
+   "vom_usd_mwh": 0.0,
+   "heat_rate_btu_kwh": null
+  },
+  {
+   "category": "Renewable",
+   "technology": "Offshore wind, fixed-bottom monopile",
+   "configuration": "900 MW, 15 MW turbines",
+   "capacity_mw": 900.0,
+   "overnight_usd_kw": 3689.0,
+   "fom_usd_kw_yr": 154.0,
+   "vom_usd_mwh": 0.0,
+   "heat_rate_btu_kwh": null
+  },
+  {
+   "category": "Renewable",
+   "technology": "Hydroelectric, new stream reach",
+   "configuration": "New stream reach",
+   "capacity_mw": 100.0,
+   "overnight_usd_kw": 7073.0,
+   "fom_usd_kw_yr": 33.54,
+   "vom_usd_mwh": 0.0,
+   "heat_rate_btu_kwh": null
+  },
+  {
+   "category": "Renewable",
+   "technology": "Woody biomass, 95 % carbon capture",
+   "configuration": "1 x BFB",
+   "capacity_mw": 50.0,
+   "overnight_usd_kw": 12631.0,
+   "fom_usd_kw_yr": 261.18,
+   "vom_usd_mwh": 9.65,
+   "heat_rate_btu_kwh": 19965.0
+  },
+  {
+   "category": "Storage",
+   "technology": "Battery storage, lithium-ion (4 h)",
+   "configuration": "150 MW / 600 MWh ($436/kWh)",
+   "capacity_mw": 150.0,
+   "overnight_usd_kw": 1744.0,
+   "fom_usd_kw_yr": 40.0,
+   "vom_usd_mwh": 0.0,
+   "heat_rate_btu_kwh": null
+  },
+  {
+   "category": "Nuclear",
+   "technology": "Small modular reactor (SMR)",
+   "configuration": "6 x 80 MW",
+   "capacity_mw": 480.0,
+   "overnight_usd_kw": 8936.0,
+   "fom_usd_kw_yr": 121.99,
+   "vom_usd_mwh": 3.19,
+   "heat_rate_btu_kwh": 10046.0
+  },
+  {
+   "category": "Nuclear",
+   "technology": "Advanced nuclear, brownfield",
+   "configuration": "2 x AP1000",
+   "capacity_mw": 2156.0,
+   "overnight_usd_kw": 7861.0,
+   "fom_usd_kw_yr": 156.2,
+   "vom_usd_mwh": 2.52,
+   "heat_rate_btu_kwh": 10608.0
+  },
+  {
+   "category": "Fossil (reference)",
+   "technology": "Combined cycle 2x2x1, H-class",
+   "configuration": "2 x 1 H-class",
+   "capacity_mw": 1227.0,
+   "overnight_usd_kw": 868.0,
+   "fom_usd_kw_yr": 12.12,
+   "vom_usd_mwh": 3.41,
+   "heat_rate_btu_kwh": 6266.0
+  },
+  {
+   "category": "Fossil (reference)",
+   "technology": "Combined cycle 1x1x1, single shaft",
+   "configuration": "1 x 1 H-class",
+   "capacity_mw": 627.0,
+   "overnight_usd_kw": 921.0,
+   "fom_usd_kw_yr": 15.51,
+   "vom_usd_mwh": 3.33,
+   "heat_rate_btu_kwh": 6226.0
+  },
+  {
+   "category": "Fossil (reference)",
+   "technology": "Combined cycle 1x1x1, 95 % carbon capture",
+   "configuration": "1 x 1 H-class",
+   "capacity_mw": 543.0,
+   "overnight_usd_kw": 2365.0,
+   "fom_usd_kw_yr": 24.78,
+   "vom_usd_mwh": 5.05,
+   "heat_rate_btu_kwh": 7239.0
+  },
+  {
+   "category": "Fossil (reference)",
+   "technology": "Combustion turbine, simple cycle, H-class",
+   "configuration": "1 x H-class",
+   "capacity_mw": 419.0,
+   "overnight_usd_kw": 836.0,
+   "fom_usd_kw_yr": 6.87,
+   "vom_usd_mwh": 1.24,
+   "heat_rate_btu_kwh": 9142.0
+  },
+  {
+   "category": "Fossil (reference)",
+   "technology": "Aeroderivative CT, simple cycle",
+   "configuration": "4 x 54 MW",
+   "capacity_mw": 211.0,
+   "overnight_usd_kw": 1606.0,
+   "fom_usd_kw_yr": 9.56,
+   "vom_usd_mwh": 5.7,
+   "heat_rate_btu_kwh": 9447.0
+  },
+  {
+   "category": "Fossil (reference)",
+   "technology": "Ultra-supercritical coal",
+   "configuration": "1 x 735 MW gross",
+   "capacity_mw": 650.0,
+   "overnight_usd_kw": 4103.0,
+   "fom_usd_kw_yr": 61.6,
+   "vom_usd_mwh": 6.4,
+   "heat_rate_btu_kwh": 8638.0
+  },
+  {
+   "category": "Fossil (reference)",
+   "technology": "Ultra-supercritical coal, 95 % carbon capture",
+   "configuration": "1 x 819 MW gross",
+   "capacity_mw": 650.0,
+   "overnight_usd_kw": 7346.0,
+   "fom_usd_kw_yr": 86.7,
+   "vom_usd_mwh": 13.73,
+   "heat_rate_btu_kwh": 12293.0
+  }
+ ],
+ "lazard": [
+  {
+   "category": "Renewable",
+   "technology": "Solar PV, utility",
+   "capex_lo_usd_kw": 1250.0,
+   "capex_hi_usd_kw": 1850.0,
+   "capacity_factor": "20\u201330 %",
+   "lcoe_lo_usd_mwh": 40.0,
+   "lcoe_hi_usd_mwh": 98.0
+  },
+  {
+   "category": "Renewable",
+   "technology": "Solar PV, community & C&I",
+   "capex_lo_usd_kw": 1750.0,
+   "capex_hi_usd_kw": 2950.0,
+   "capacity_factor": "15\u201320 %",
+   "lcoe_lo_usd_mwh": 88.0,
+   "lcoe_hi_usd_mwh": 197.0
+  },
+  {
+   "category": "Renewable",
+   "technology": "Solar PV + storage, utility (generation part only)",
+   "capex_lo_usd_kw": 1250.0,
+   "capex_hi_usd_kw": 1850.0,
+   "capacity_factor": "20\u201330 %",
+   "lcoe_lo_usd_mwh": 61.0,
+   "lcoe_hi_usd_mwh": 156.0
+  },
+  {
+   "category": "Renewable",
+   "technology": "Wind, onshore",
+   "capex_lo_usd_kw": 1900.0,
+   "capex_hi_usd_kw": 2750.0,
+   "capacity_factor": "30\u201355 %",
+   "lcoe_lo_usd_mwh": 37.0,
+   "lcoe_hi_usd_mwh": 99.0
+  },
+  {
+   "category": "Renewable",
+   "technology": "Wind + storage, onshore (generation part only)",
+   "capex_lo_usd_kw": 1900.0,
+   "capex_hi_usd_kw": 2750.0,
+   "capacity_factor": "30\u201355 %",
+   "lcoe_lo_usd_mwh": 49.0,
+   "lcoe_hi_usd_mwh": 140.0
+  },
+  {
+   "category": "Renewable",
+   "technology": "Wind, offshore",
+   "capex_lo_usd_kw": 5600.0,
+   "capex_hi_usd_kw": 7100.0,
+   "capacity_factor": "45\u201355 %",
+   "lcoe_lo_usd_mwh": 105.0,
+   "lcoe_hi_usd_mwh": 167.0
+  },
+  {
+   "category": "Renewable",
+   "technology": "Geothermal",
+   "capex_lo_usd_kw": 5135.0,
+   "capex_hi_usd_kw": 6635.0,
+   "capacity_factor": "80\u201390 %",
+   "lcoe_lo_usd_mwh": 67.0,
+   "lcoe_hi_usd_mwh": 111.0
+  },
+  {
+   "category": "Nuclear",
+   "technology": "Nuclear, large (U.S.)",
+   "capex_lo_usd_kw": 12300.0,
+   "capex_hi_usd_kw": 17570.0,
+   "capacity_factor": "89\u201394 %",
+   "lcoe_lo_usd_mwh": 175.0,
+   "lcoe_hi_usd_mwh": 255.0
+  },
+  {
+   "category": "Fossil (reference)",
+   "technology": "Gas combined cycle",
+   "capex_lo_usd_kw": 1450.0,
+   "capex_hi_usd_kw": 2100.0,
+   "capacity_factor": "30\u201390 %",
+   "lcoe_lo_usd_mwh": 51.0,
+   "lcoe_hi_usd_mwh": 129.0
+  },
+  {
+   "category": "Fossil (reference)",
+   "technology": "Gas peaking",
+   "capex_lo_usd_kw": 1100.0,
+   "capex_hi_usd_kw": 1650.0,
+   "capacity_factor": "10\u201315 %",
+   "lcoe_lo_usd_mwh": 144.0,
+   "lcoe_hi_usd_mwh": 276.0
+  },
+  {
+   "category": "Fossil (reference)",
+   "technology": "Coal",
+   "capex_lo_usd_kw": 3495.0,
+   "capex_hi_usd_kw": 7405.0,
+   "capacity_factor": "65\u201385 %",
+   "lcoe_lo_usd_mwh": 72.0,
+   "lcoe_hi_usd_mwh": 177.0
+  }
+ ],
+ "real_projects": [
+  {
+   "technology": "SMR (NuScale)",
+   "project": "UAMPS Carbon Free Power Project, 6 x 77 MW",
+   "location": "Idaho, USA",
+   "capacity_mw": 462.0,
+   "currency": "USD",
+   "cost_per_kw": 20129.8701298701,
+   "status": "Class 3 estimate Jan 2023, incl. financing; cancelled Nov 2023. IEEFA quotes $20,139/kW.",
+   "source": "https://ieefa.org/resources/eye-popping-new-cost-estimates-released-nuscale-small-modular-reactor"
+  },
+  {
+   "technology": "SMR (BWRX-300)",
+   "project": "OPG Darlington New Nuclear, unit 1 only",
+   "location": "Ontario, Canada",
+   "capacity_mw": 300.0,
+   "currency": "CAD",
+   "cost_per_kw": 20333.3333333333,
+   "status": "First unit, release-quality estimate (May 2025).",
+   "source": "https://wnn.world-nuclear.org/articles/what-is-the-budget-for-canadas-first-smr-project"
+  },
+  {
+   "technology": "SMR (BWRX-300)",
+   "project": "OPG Darlington, unit 1 + shared infrastructure",
+   "location": "Ontario, Canada",
+   "capacity_mw": 300.0,
+   "currency": "CAD",
+   "cost_per_kw": 25666.6666666667,
+   "status": "Includes C$1.6 billion common infrastructure; OPG has since said unit 1 will exceed this budget and miss Oct 2030.",
+   "source": "https://www.canarymedia.com/articles/nuclear/small-modular-nuclear-reactor-late-canada"
+  },
+  {
+   "technology": "SMR (BWRX-300)",
+   "project": "OPG Darlington, all 4 units",
+   "location": "Ontario, Canada",
+   "capacity_mw": 1200.0,
+   "currency": "CAD",
+   "cost_per_kw": 17416.6666666667,
+   "status": "Total budget for 4 units (\u2248 USD 15.1 billion).",
+   "source": "https://www.canada.ca/en/privy-council/major-projects-office/projects/national/darlington.html"
+  },
+  {
+   "technology": "Advanced reactor (Natrium)",
+   "project": "TerraPower Kemmerer Unit 1, 345 MWe",
+   "location": "Wyoming, USA",
+   "capacity_mw": 345.0,
+   "currency": "USD",
+   "cost_per_kw": 11594.2028985507,
+   "status": "Estimated cost; up to $2 billion DOE cost share; construction started Apr 23, 2026.",
+   "source": "https://www.powermag.com/terrapowers-kemmerer-1-enters-construction-timeline-of-the-natrium-projects-road-to-first-power/"
+  },
+  {
+   "technology": "Geothermal (EGS)",
+   "project": "Fervo Cape Station Phase I, ~100 MW",
+   "location": "Utah, USA",
+   "capacity_mw": 100.0,
+   "currency": "USD",
+   "cost_per_kw": 7000.0,
+   "status": "Reported installed cost \u2248 $7,000/kW (GeoBlocks 1\u20133); first unit commercial Oct 2026.",
+   "source": "https://www.spglobal.com/market-intelligence/en/news-insights/articles/2026/8/next-generation-geothermal-developers-seek-broader-market-appeal-104380325"
+  },
+  {
+   "technology": "Geothermal (EGS)",
+   "project": "Fervo Cape Station Phase II, 400 MW (Google PPA)",
+   "location": "Utah, USA",
+   "capacity_mw": 400.0,
+   "currency": "USD",
+   "cost_per_kw": 5500.0,
+   "status": "Target installed cost $5,500/kW; online 2028. Long-term company target $3,000/kW.",
+   "source": "https://www.technologyreview.com/2026/10/06/1145252/fervo-energy-geothermal-power-streamline-plan/amp/"
+  },
+  {
+   "technology": "Solar PV (empirical)",
+   "project": "U.S. utility-scale PV built in 2024 (425 projects)",
+   "location": "United States",
+   "capacity_mw": null,
+   "currency": "USD",
+   "cost_per_kw": 1610.0,
+   "status": "Capacity-weighted average installed cost $1.61/Wac (LBNL).",
+   "source": "https://www.pv-tech.org/us-utility-pv-up-56-in-2024-accounting-for-54-of-all-new-capacity-lnbl/"
+  }
+ ],
+ "smr_real_project_range": {
+  "label": "SMR / advanced reactor \u2014 real projects (USD rows)",
+  "cost_per_kw_lo": 11594.2028985507,
+  "cost_per_kw_hi": 20129.8701298701,
+  "projects": [
+   "UAMPS Carbon Free Power Project, 6 x 77 MW",
+   "TerraPower Kemmerer Unit 1, 345 MWe"
+  ],
+  "note": "Reported overnight cost per kW from the workbook's Real projects sheet (USD-denominated rows only; CAD rows are listed in the table unconverted). A capital-cost anchor, not an LCOE."
+ },
+ "sources": [
+  {
+   "name": "U.S. EIA / Sargent & Lundy, Capital Cost and Performance Characteristics for Utility-Scale Electric Power Generating Technologies, Jan. 2024",
+   "link": "https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2025.pdf"
+  },
+  {
+   "name": "Lazard, Levelized Cost of Energy+ (LCOE+), July 2026",
+   "link": "https://lazard.com/media/sdvdrvc5/lazards-lcoeplus_vf.pdf"
+  },
+  {
+   "name": "IEEFA, Eye-popping new cost estimates released for NuScale small modular reactor, Jan. 2023",
+   "link": "https://ieefa.org/resources/eye-popping-new-cost-estimates-released-nuscale-small-modular-reactor"
+  },
+  {
+   "name": "World Nuclear News, Canada's first SMR project: how is CAD20.9 billion cost calculated?",
+   "link": "https://wnn.world-nuclear.org/articles/what-is-the-budget-for-canadas-first-smr-project"
+  },
+  {
+   "name": "Government of Canada, Major Projects Office: Darlington New Nuclear Project",
+   "link": "https://www.canada.ca/en/privy-council/major-projects-office/projects/national/darlington.html"
+  },
+  {
+   "name": "Canary Media, North America's first SMR project runs late and over budget",
+   "link": "https://www.canarymedia.com/articles/nuclear/small-modular-nuclear-reactor-late-canada"
+  },
+  {
+   "name": "POWER Magazine, TerraPower's Kemmerer 1 enters construction, 2026",
+   "link": "https://www.powermag.com/terrapowers-kemmerer-1-enters-construction-timeline-of-the-natrium-projects-road-to-first-power/"
+  },
+  {
+   "name": "S&P Global, Next-generation geothermal developers seek broader market appeal, Aug. 2026",
+   "link": "https://www.spglobal.com/market-intelligence/en/news-insights/articles/2026/8/next-generation-geothermal-developers-seek-broader-market-appeal-104380325"
+  },
+  {
+   "name": "MIT Technology Review, Fervo Energy geothermal plan, Oct. 2026",
+   "link": "https://www.technologyreview.com/2026/10/06/1145252/fervo-energy-geothermal-power-streamline-plan/amp/"
+  },
+  {
+   "name": "PV Tech, citing LBNL Utility-Scale Solar 2025 Data Update, Oct. 2025",
+   "link": "https://www.pv-tech.org/us-utility-pv-up-56-in-2024-accounting-for-54-of-all-new-capacity-lnbl/"
+  }
+ ]
+}
